@@ -26,19 +26,18 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-
+/*-----------Header Start-------------*/
 header {
     width: 100%;
     height: 88px;
     background: #f7f7f7;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 0 150px;
 }
 
 .subHeader {
+    display:flex;
     gap: 40px;
-    padding: 0 200px;
 }
 
 header img {
@@ -68,11 +67,17 @@ header img {
     padding-bottom: 5px;
 
 }
+/*-----------Header End-------------*/
+
+/*-----------Section start-------------*/
 
 section {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 13rem;
 }
+
+/*-----------Section1 start-------------*/
 
 .section1 {
     display: flex;
@@ -101,8 +106,7 @@ form {
 .addDarkColor::placeholder{
     color:var(--primary-black)
 }
-form input{
-    
+form input,.section2 input{
     border:none;
     border-bottom:1px solid var(--Grey_line);
     padding-bottom:10px;
@@ -114,7 +118,7 @@ form input{
     grid-template-columns: 2fr 1fr;
     gap:22px;
 }
-form input::placeholder{
+form input::placeholder,.section2 input::placeholder{
   padding-left:10px;
   color:var(--Input-text);
 }
@@ -158,7 +162,7 @@ form input::placeholder{
     color: var(--Input-text);
 }
 
-button{
+.section1 button{
     padding:16px;
     background-color:var(--Primeraly-Green);
     color:white;
@@ -166,7 +170,7 @@ button{
     cursor: pointer;
     transition: .3s ease;
 }
-button:hover{
+.section1 button:hover{
     box-shadow: 2px 2px 5px #0000005d;
 }
 .CheckBox{
@@ -178,3 +182,69 @@ button:hover{
     font-weight: 400;
     color:var(--primary-black);
 }
+.CheckBox input[type="checkbox"] {
+    accent-color: var(--Primeraly-Green);
+}
+/*-----------Section1 End-------------*/
+
+/*-----------Section2 start-------------*/
+
+.section2{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+   margin-top:40vh;
+}
+.section2Container{
+ flex-direction: column;
+ gap:30px;
+}
+
+.section2TitleHeading{
+    font-size: 16px;
+    font-weight: 700;
+    color:var(--primary-black);
+}
+.section2 p{
+    font-size: 16px;
+    font-weight: 400;
+    color:var(--primary-black)
+}
+
+.Inquiries{
+    gap:10px;
+}
+.Inquiries img{
+    width:23px;
+    height:16px;
+}
+.newsletter{
+    gap:30px;
+    align-items: center;
+}
+.section2 input{
+    padding:16;
+    width:262px;
+}
+.section2 span{
+  background-color: var(--Primeraly-Green);
+  width:71px;
+  height:50px;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ 
+}
+.newsletter svg{
+font-size:18;
+stroke: white;
+}
+/*-----------Section2 End-------------*/
+
+/*-----------Section End-------------*/
+
+/*-----------footer start-------------*/
+footer{
+    margin-top:40px;
+}
+/*-----------footer end-------------*/
