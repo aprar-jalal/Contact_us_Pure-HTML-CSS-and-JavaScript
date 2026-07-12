@@ -69,7 +69,42 @@ header img {
 
 }
 .menu-btn{
-    display:none;
+   display:none;
+    border:none;
+    background:none;
+    font-size:30px;
+    cursor:pointer;
+}
+.sidebar {
+    position:fixed;
+    top:0;
+    left:-300px;
+    width:250px;
+    height:100vh;
+    background:white;
+    display:flex;
+    flex-direction:column;
+    padding:40px;
+    gap:30px;
+    transition:0.3s;
+    box-shadow:2px 0 10px #0003;
+    z-index:1000;
+}
+.sidebar.active {
+    left:0;
+}
+.sidebar a {
+    text-decoration:none;
+    color:#383C3E;
+    border-bottom:1px dashed var(--Grey_line);
+    padding-bottom: 10px;
+}
+
+.close-btn {
+    align-self:flex-end;
+    border:none;
+    background:none;
+    font-size:30px;
 }
 /*-----------Header End-------------*/
 
@@ -258,7 +293,7 @@ footer{
         padding:20px;
     }
     header img {
-        width: 50px;
+        display: none;
     }
     .headerContent {
         font-size: 32px;
@@ -269,7 +304,10 @@ footer{
     .towInputs{
      grid-template-columns: 1fr;
     }
-    header{
+    .subHeader {
         display:none;
+    } 
+    .menu-btn {
+        display:block;
     }
 }
