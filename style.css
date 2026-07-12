@@ -25,6 +25,9 @@ body {
 .flex {
     display: flex;
     flex-wrap: wrap;
+} 
+.coulmn{
+    flex-direction: column;
 }
 /*-----------Header Start-------------*/
 header {
@@ -150,6 +153,7 @@ form input,.section2 input{
     border:none;
     border-bottom:1px solid var(--Grey_line);
     padding-bottom:10px;
+    padding :16px;
 }
 
 .towInputs{
@@ -288,6 +292,8 @@ footer{
     margin-top:40px;
 }
 /*-----------footer end-------------*/
+
+/*-----------MediaQuery-------------*/
 @media screen and (max-width: 872px) {
     .container{
         padding:20px;
@@ -310,4 +316,10 @@ footer{
     .menu-btn {
         display:block;
     }
+}
+
+/*-----------Error----------*/
+.error {
+    color: red;
+    font-size: 12px;
 }

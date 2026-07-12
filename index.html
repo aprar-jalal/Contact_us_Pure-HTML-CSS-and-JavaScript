@@ -7,6 +7,7 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <meta>
 </head>
 
@@ -49,18 +50,46 @@
             <h1 class="headerContent">Contact us</h1>
             <p class="subHeaderContent">Need an experienced and skilled hand with custom IT projects?
                 Fill out the form to get a free consultation.</p>
-            <form>
-                <input type="text" placeholder="Your Comoany Name" name="Name" class="addDarkColor" />
-                <input type="text" placeholder="Nature of Bussiness" name="Bussiness" />
-                <div class="towInputs">
-                    <input type="text" placeholder="Address" name="Address" />
-                    <input type="text" placeholder="Postcode" name="Postcode" />
+            <form id="contactForm">
+                <div class="flex coulmn">
+                <input type="text" placeholder="Your Comoany Name" name="Name" />
+                <small class="error" id="NameError"></small>
                 </div>
-                <input type="text" placeholder="Contact name" name="Contact_name" />
-                <input type="text" placeholder="Contact Phone" name="Phone" />
-                <input type="email" placeholder="email@gmail" name="gmail" class="addDarkColor" />
-                <input type="text" placeholder="Linkedin" name="linkedin" />
+                <div class="flex coulmn">
+                     <input type="text" placeholder="Nature of Bussiness" name="Bussiness" />
+                      <small class="error" id="BussinessError"></small>
+                </div>
+                <div class="towInputs">
+                    <div class="flex coulmn">
+                        <input type="text" placeholder="Address" name="Address" />
+                        <small class="error" id="AddressError"></small>
+                    </div>
+                    <div class="flex coulmn">
+                        <input type="text" placeholder="Postcode" name="Postcode" />
+                        <small class="error" id="PostcodeError"></small>
+                    </div>
+                </div>
+                <div class="flex coulmn">
+                    <input type="text" placeholder="Contact name" name="Contact_name" />
+                    <small class="error" id="Contact_nameError"></small>
+                </div>
+                <div class="flex coulmn">
+                    <input type="text" placeholder="Contact Phone" name="Phone" />
+                    <small class="error" id="PhoneError"></small>
+                </div>
+                <div class="flex coulmn">
+                    <input type="email" placeholder="email@gmail" name="gmail" />
+                    <small class="error" id="emailError"></small>
+                </div>
+                <div class="flex coulmn">
+                     <input type="text" placeholder="Linkedin" name="linkedin" />
+                     <small class="error" id="linkedinError"></small>
+                </div>
+               <div class="flex coulmn">
                 <input type="text" placeholder="Let’s talk about your idea" name="idea" />
+                <small class="error" id="ideaError"></small>
+               </div>
+                
                 <div class="upload-container">
                     <input type="file" id="myfile" hidden>
 
@@ -73,10 +102,11 @@
                         Attach file. File size of your documents should not exceed 10MB
                     </p>
                 </div>
+                <button type="submit">
+                    SUBMIT
+                </button>
             </form>
-            <button>
-                SUBMIT
-            </button>
+
             <div class="CheckBox">
                 <input type="checkbox" />
                 <p>I want to protect my data by signing an NDA</p>
@@ -130,6 +160,7 @@
     <script>
         lucide.createIcons();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>
