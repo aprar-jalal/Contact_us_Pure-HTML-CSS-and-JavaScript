@@ -3,7 +3,6 @@ const links = document.querySelectorAll(".subHeader a");
 const form = document.getElementById("contactForm");
 const error = document.querySelectorAll(".error");
 const inputs = form.querySelectorAll("input");
-const maxSize = 10 * 1024 * 1024;
 //--------------sidebar functions---------------
 
 links.forEach((link) => {

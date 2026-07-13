@@ -114,7 +114,7 @@ header img {
 
 /*-----------Section start-------------*/
 
-section {
+.section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 13rem;
@@ -304,7 +304,7 @@ footer{
     .headerContent {
         font-size: 32px;
     }
-    section {
+    .section {
     grid-template-columns: 1fr;
     }
     .towInputs{
@@ -325,4 +325,52 @@ footer{
 }
 .error-input {
     border-bottom: 2px solid red !important;
+}
+/*----------Modal start---------*/
+.modal{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* position :fixed; */
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.133);
+    z-index: 2000;
+    }
+
+.modal.active {
+    display:flex;
+}
+.modal-content{
+    background-color:white;
+    display:flex;
+    flex-direction: column;
+    gap:30px;
+    width:600px;
+    max-height:80vh;
+    padding:30px;
+    border-radius:30px;
+}
+.close-modal{
+    align-self: flex-end;
+    border:none;
+    background: none;
+    font-size:24px;
+    cursor:pointer;
+}
+.terms-text {
+    display:flex;
+    flex-direction: column;
+    overflow-y:auto;
+    height:200px;
+    gap:40px;
+}
+
+
+
+.terms-checkbox {
+    position:sticky;
+    bottom:0;
+    background:rgba(173, 172, 172, 0.237);
+    padding:8px;
+    border-radius: 10px;
 }

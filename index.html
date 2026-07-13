@@ -45,19 +45,19 @@
         <a href="#">Contact us</a>
 
     </div>
-    <section class="container">
+    <section class="container section">
         <div class="section1">
             <h1 class="headerContent">Contact us</h1>
             <p class="subHeaderContent">Need an experienced and skilled hand with custom IT projects?
                 Fill out the form to get a free consultation.</p>
             <form id="contactForm">
                 <div class="flex coulmn">
-                <input type="text" placeholder="Your Comoany Name" name="Name" />
-                <small class="error" id="NameError"></small>
+                    <input type="text" placeholder="Your Comoany Name" name="Name" />
+                    <small class="error" id="NameError"></small>
                 </div>
                 <div class="flex coulmn">
-                     <input type="text" placeholder="Nature of Bussiness" name="Bussiness" />
-                      <small class="error" id="BussinessError"></small>
+                    <input type="text" placeholder="Nature of Bussiness" name="Bussiness" />
+                    <small class="error" id="BussinessError"></small>
                 </div>
                 <div class="towInputs">
                     <div class="flex coulmn">
@@ -82,14 +82,14 @@
                     <small class="error" id="emailError"></small>
                 </div>
                 <div class="flex coulmn">
-                     <input type="text" placeholder="Linkedin" name="linkedin" />
-                     <small class="error" id="linkedinError"></small>
+                    <input type="text" placeholder="Linkedin" name="linkedin" />
+                    <small class="error" id="linkedinError"></small>
                 </div>
-               <div class="flex coulmn">
-                <input type="text" placeholder="Let’s talk about your idea" name="idea" />
-                <small class="error" id="ideaError"></small>
-               </div>
-                
+                <div class="flex coulmn">
+                    <input type="text" placeholder="Let’s talk about your idea" name="idea" />
+                    <small class="error" id="ideaError"></small>
+                </div>
+
                 <div class="upload-container">
                     <input type="file" id="myfile" name="file" hidden>
 
@@ -103,17 +103,20 @@
                     </p>
                     <small class="error" id="fileError"></small>
                 </div>
+                <button type="button" id="termsBtn">
+                    Read our terms
+                </button>
                 <button type="submit">
                     SUBMIT
                 </button>
                 <div class="CheckBox">
-                <input type="checkbox"  id="checkbox" name="checkbox"/>
-                <p>I want to protect my data by signing an NDA</p>
-                <small class="error" id="checkboxError"></small>
+                    <input type="checkbox" id="checkbox" name="checkbox" />
+                    <p>I want to protect my data by signing an NDA</p>
+                    <small class="error" id="checkboxError"></small>
                 </div>
             </form>
 
-            
+
 
         </div>
         <div class="section2">
@@ -154,6 +157,58 @@
                     </span>
                 </div>
             </div>
+        </div>
+    </section>
+    <section>
+        <div class="modal" id="termsModal">
+
+            <div class="modal-content">
+
+                <button type="button" class="close-modal" id="closeModal">
+                    ×
+                </button>
+
+                <h2>Terms and Conditions</h2>
+
+
+                <div class="terms-text">
+
+                    <p>
+                        These are our terms and conditions.
+                        Please read them carefully before submitting
+                        the form.
+                    </p>
+
+                    <p>
+                        By accepting these terms, you agree that your
+                        information can be used for communication purposes.
+                    </p>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        More dummy terms here...
+                    </p>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        More dummy terms here...
+                    </p>
+
+                </div>
+
+
+                <div class="terms-checkbox">
+
+                    <input type="checkbox" id="acceptTerms">
+
+                    <label>
+                        I accept the terms and conditions
+                    </label>
+
+                </div>
+
+            </div>
+
         </div>
     </section>
     <footer>
