@@ -323,3 +323,6 @@ footer{
     color: red;
     font-size: 12px;
 }
+.error-input {
+    border-bottom: 2px solid red !important;
+}

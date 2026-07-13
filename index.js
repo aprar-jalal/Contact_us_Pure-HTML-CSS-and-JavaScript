@@ -1,4 +1,11 @@
+//--------------Constants---------------
 const links = document.querySelectorAll(".subHeader a");
+const form = document.getElementById("contactForm");
+const error = document.querySelectorAll(".error");
+const inputs = form.querySelectorAll("input");
+
+//--------------sidebar functions---------------
+
 links.forEach((link) => {
   link.addEventListener("click", function (e) {
     e.preventDefault();
@@ -6,7 +13,6 @@ links.forEach((link) => {
     this.classList.add("active");
   });
 });
-
 function openMenu() {
   document.getElementById("sidebar").classList.add("active");
 }
@@ -14,69 +20,50 @@ function closeMenu() {
   document.getElementById("sidebar").classList.remove("active");
 }
 
-const form = document.getElementById("contactForm");
+//--------------validation functions---------------
 
+//validation for each input
+function validateField(input) {
+  const ErrorName = document.getElementById(input.name + "Error");
+  if (!ErrorName) return true;
+
+  const value = input.value.trim();
+
+  if (value === "") {
+    ErrorName.textContent = "This field is required";
+    input.classList.add("error-input");
+    return false;
+  }
+
+  if (input.name === "email") {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      ErrorName.textContent =
+      "Please enter valid email format";
+      input.classList.add("error-input");
+      return false;
+    }
+  }
+  ErrorName.textContent = "";
+  input.classList.remove("error-input");
+
+  return true;
+}
+
+//on clicking the submit button and showing a toast message 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  error.forEach((err) => (err.textContent = ""));
 
   let isValid = true;
-  const Name = form.elements["Name"].value.trim();
-  const Bussiness = form.elements["Bussiness"].value.trim();
-  const Address = form.elements["Address"].value.trim();
-  const Postcode = form.elements["Postcode"].value.trim();
-  const Contact_name = form.elements["Contact_name"].value.trim();
-  const Email = form.elements["gmail"].value.trim();
-  const Phone = form.elements["Phone"].value.trim();
-  const linkedin = form.elements["linkedin"].value.trim();
-  const idea = form.elements["idea"].value.trim();
-
-  if (Name == "") {
-    document.getElementById("NameError").innerHTML =
-      "Please, enter name of your company";
-    isValid = false;
-  }
-  if (Bussiness == "") {
-    document.getElementById("BussinessError").innerHTML =
-      "Please, enter the Nature of Bussiness";
-    isValid = false;
-  }
-  if (Address == "") {
-    document.getElementById("AddressError").innerHTML =
-      "Please, enter your Address";
-    isValid = false;
-  }
-  if (Postcode == "") {
-    document.getElementById("PostcodeError").innerHTML =
-      "Please, enter the Postcode";
-    isValid = false;
-  }
-  if (Contact_name == "") {
-    document.getElementById("Contact_nameError").innerHTML =
-      "Please, enter Contact Name";
-    isValid = false;
-  }
-  if (Phone == "") {
-    document.getElementById("PhoneError").innerHTML =
-      "Please, enter Phone Number";
-    isValid = false;
-  }
-  if (Email == "") {
-    document.getElementById("emailError").innerHTML =
-      "Please, enter valid email address";
-    isValid = false;
-  }
-  if (linkedin == "") {
-    document.getElementById("LinkedinError").innerHTML =
-      "Please, enter Linkedin name";
-    isValid = false;
-  }
-  if (idea == "") {
-    document.getElementById("ideaError").innerHTML = "Please, enter your Idea";
-    isValid = false;
-  }
-  if (!isValid) {
-    return;
-  }
+  inputs.forEach((input) => {
+    if (!validateField(input)) {
+      isValid = false;
+    }
+  });
+   if (!isValid) {
+      return;
+    }
   const formData = new FormData(form);
 
   let message = "";
@@ -91,8 +78,15 @@ form.addEventListener("submit", function (e) {
     gravity: "top",
     position: "right",
     style: {
-        background: "#a5a5a5",
-    }
-}).showToast();
+      background: "#a5a5a5",
+    },
+  }).showToast();
   form.reset();
+});
+
+//when writing on the input field error is gone
+inputs.forEach((input) => {
+  input.addEventListener("input", function () {
+    validateField(input);
+  });
 });
