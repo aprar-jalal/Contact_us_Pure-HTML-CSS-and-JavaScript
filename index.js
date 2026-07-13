@@ -3,7 +3,7 @@ const links = document.querySelectorAll(".subHeader a");
 const form = document.getElementById("contactForm");
 const error = document.querySelectorAll(".error");
 const inputs = form.querySelectorAll("input");
-
+const maxSize = 10 * 1024 * 1024;
 //--------------sidebar functions---------------
 
 links.forEach((link) => {
@@ -22,35 +22,44 @@ function closeMenu() {
 
 //--------------validation functions---------------
 
-//validation for each input
+//******validation for each input**********
 function validateField(input) {
   const ErrorName = document.getElementById(input.name + "Error");
   if (!ErrorName) return true;
 
   const value = input.value.trim();
-
+  //required for all input fields
   if (value === "") {
     ErrorName.textContent = "This field is required";
     input.classList.add("error-input");
     return false;
   }
-
+  // email format validation
   if (input.name === "email") {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(value)) {
-      ErrorName.textContent =
-      "Please enter valid email format";
+      ErrorName.textContent = "Please enter valid email format";
       input.classList.add("error-input");
       return false;
     }
   }
+  //checkbox vaildation
+  if (input.type === "checkbox") {
+    if (!input.checked) {
+      ErrorName.textContent = "This field is required";
+      input.classList.add("error-input");
+      return false;
+    }
+  }
+
+  //after all if it's all correct :
   ErrorName.textContent = "";
   input.classList.remove("error-input");
 
   return true;
 }
 
-//on clicking the submit button and showing a toast message 
+//****on clicking the submit button and showing a toast message****
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   error.forEach((err) => (err.textContent = ""));
@@ -61,9 +70,9 @@ form.addEventListener("submit", function (e) {
       isValid = false;
     }
   });
-   if (!isValid) {
-      return;
-    }
+  if (!isValid) {
+    return;
+  }
   const formData = new FormData(form);
 
   let message = "";
@@ -84,7 +93,7 @@ form.addEventListener("submit", function (e) {
   form.reset();
 });
 
-//when writing on the input field error is gone
+//******when writing on the input field error is gone*****
 inputs.forEach((input) => {
   input.addEventListener("input", function () {
     validateField(input);

@@ -91,7 +91,7 @@
                </div>
                 
                 <div class="upload-container">
-                    <input type="file" id="myfile" hidden>
+                    <input type="file" id="myfile" name="file" hidden>
 
                     <label for="myfile" class="upload-box">
                         <i data-lucide="upload"></i>
@@ -101,16 +101,19 @@
                     <p class="upload-note">
                         Attach file. File size of your documents should not exceed 10MB
                     </p>
+                    <small class="error" id="fileError"></small>
                 </div>
                 <button type="submit">
                     SUBMIT
                 </button>
+                <div class="CheckBox">
+                <input type="checkbox"  id="checkbox" name="checkbox"/>
+                <p>I want to protect my data by signing an NDA</p>
+                <small class="error" id="checkboxError"></small>
+                </div>
             </form>
 
-            <div class="CheckBox">
-                <input type="checkbox" />
-                <p>I want to protect my data by signing an NDA</p>
-            </div>
+            
 
         </div>
         <div class="section2">
