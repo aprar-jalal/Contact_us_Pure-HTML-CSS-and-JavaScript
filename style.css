@@ -294,7 +294,7 @@ footer{
 /*-----------footer end-------------*/
 
 /*-----------MediaQuery-------------*/
-@media screen and (max-width: 872px) {
+@media screen and (max-width: 964px) {
     .container{
         padding:20px;
     }
@@ -328,13 +328,17 @@ footer{
 }
 /*----------Modal start---------*/
 .modal{
-    display:flex;
+    display:none;
     justify-content: center;
     align-items: center;
-    /* position :fixed; */
+    position :fixed;
     backdrop-filter: blur(8px);
     background: rgba(0, 0, 0, 0.133);
     z-index: 2000;
+    top:0;
+left:0;
+width:100%;
+height:100%;
     }
 
 .modal.active {
@@ -361,11 +365,9 @@ footer{
     display:flex;
     flex-direction: column;
     overflow-y:auto;
-    height:200px;
+    height:300px;
     gap:40px;
 }
-
-
 
 .terms-checkbox {
     position:sticky;
@@ -373,4 +375,38 @@ footer{
     background:rgba(173, 172, 172, 0.237);
     padding:8px;
     border-radius: 10px;
+}
+.ModalButton{
+    background-color: #737B7D !important;
+    width:100%;
+}
+
+/*-----Loader------*/
+.loader{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100vh;
+}
+
+/*--------posts----------*/
+
+.AboutUs{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height:100vh;
+}
+.AboutUsContainer{
+    background-color: #a1a1a153;
+    border-radius: 30px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    height:60vh;
+    width:60%;
+    padding:60px;
+    overflow-y: auto;
 }

@@ -27,25 +27,27 @@ function validateField(input) {
   if (!ErrorName) return true;
 
   const value = input.value.trim();
+    //checkbox vaildation
+  if (input.type === "checkbox") {
+    if (!input.checked) {
+      ErrorName.textContent = "This field is required";
+      input.classList.add("error-input");
+      return false;
+    }
+  }
+
   //required for all input fields
   if (value === "") {
     ErrorName.textContent = "This field is required";
     input.classList.add("error-input");
     return false;
   }
+  
   // email format validation
   if (input.name === "email") {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(value)) {
       ErrorName.textContent = "Please enter valid email format";
-      input.classList.add("error-input");
-      return false;
-    }
-  }
-  //checkbox vaildation
-  if (input.type === "checkbox") {
-    if (!input.checked) {
-      ErrorName.textContent = "This field is required";
       input.classList.add("error-input");
       return false;
     }
@@ -69,6 +71,11 @@ form.addEventListener("submit", function (e) {
       isValid = false;
     }
   });
+
+  if (!validateModalCheckBox()) {
+  isValid = false;
+}
+
   if (!isValid) {
     return;
   }

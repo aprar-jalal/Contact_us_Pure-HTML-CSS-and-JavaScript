@@ -22,7 +22,8 @@
                 <a href="#">FinTech Solutions</a>
                 <a href="#">Products</a>
                 <a href="#">Portfolio</a>
-                <a href="/index.html" class="active"><span>Contact us</span>
+                <a href="#" id="AboutLink">About us</a>
+                <a href="/index.html" class="active" id="ContactUsLink"><span>Contact us</span>
                 </a>
             </div>
             <button class="menu-btn" onclick="openMenu()">
@@ -42,10 +43,11 @@
         <a href="#">FinTech Solutions</a>
         <a href="#">Products</a>
         <a href="#">Portfolio</a>
+        <a href="#" id="AboutLink">About us</a>
         <a href="#">Contact us</a>
-
     </div>
-    <section class="container section">
+<div id="content">
+    <section class="container section" >
         <div class="section1">
             <h1 class="headerContent">Contact us</h1>
             <p class="subHeaderContent">Need an experienced and skilled hand with custom IT projects?
@@ -103,9 +105,13 @@
                     </p>
                     <small class="error" id="fileError"></small>
                 </div>
-                <button type="button" id="termsBtn">
-                    Read our terms
-                </button>
+                <div>
+                    <button type="button" id="termsBtn" class="ModalButton">
+                        Read our terms
+                    </button>
+                    <small class="error" id="termsError"></small>
+                </div>
+
                 <button type="submit">
                     SUBMIT
                 </button>
@@ -159,7 +165,7 @@
             </div>
         </div>
     </section>
-    <section>
+        <section>
         <div class="modal" id="termsModal">
 
             <div class="modal-content">
@@ -185,13 +191,15 @@
                     </p>
 
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        More dummy terms here...
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus magnam quaerat nam
+                        temporibus at beatae placeat alias earum quae, consequatur maxime dicta quisquam, commodi ullam
+                        asperiores impedit accusamus consectetur expedita.
                     </p>
 
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        More dummy terms here...
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis esse molestias id iste quam
+                        adipisci, eius dignissimos nisi nulla expedita ratione nostrum. Tenetur, repudiandae quos
+                        dignissimos suscipit quibusdam autem cumque.
                     </p>
 
                 </div>
@@ -204,16 +212,20 @@
                     <label>
                         I accept the terms and conditions
                     </label>
-
                 </div>
 
             </div>
 
         </div>
     </section>
+</div>
+
     <footer>
     </footer>
+
     <script src="./index.js"></script>
+    <script src="./Modal.js"></script>
+    <script src="./fetchApi.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
