@@ -1,10 +1,12 @@
 const aboutUs = document.getElementById("AboutLink");
-const content = document.getElementById("content");
+const aboutPage = document.getElementById("AboutUS");
+const contactPage = document.getElementById("content");
 const ContactUsLink = document.getElementById("ContactUsLink");
-const originalContent = content.innerHTML;
 aboutUs.addEventListener("click", async (e) => {
   e.preventDefault();
-  content.innerHTML = `
+  contactPage.style.display = "none";
+  aboutPage.style.display = "block";
+  aboutPage.innerHTML = `
     <div class="loader">
       Loading...
     </div>
@@ -17,7 +19,7 @@ aboutUs.addEventListener("click", async (e) => {
       throw new Error("Failed to fetch data");
     }
     const data = await response.json();
-    content.innerHTML = `<section class="AboutUs">
+    aboutPage.innerHTML = `<section class="AboutUs">
     <div class="AboutUsContainer">
     <h1>About us</h1>
     <h2>${data.title}</h2>
@@ -34,5 +36,6 @@ aboutUs.addEventListener("click", async (e) => {
 
 ContactUsLink.addEventListener("click", (e) => {
   e.preventDefault();
-  content.innerHTML = originalContent;
+  contactPage.style.display = "block";
+  aboutPage.style.display = "none";
 });
